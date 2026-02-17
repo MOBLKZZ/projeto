@@ -1,0 +1,103 @@
+#sobre {
+    background: #1a1a1a;
+
+    & .linha {
+        position: absolute;
+        background-color: var(--ouro);
+        z-index: 1;
+    }
+
+    & .linha:nth-child(1) {
+        left: 0;
+        height: 100%;
+        width: 10px;
+    }
+
+    & .linha:nth-child(2) {
+        right: 0;
+        height: 100%;
+        width: 10px;
+    }
+
+    & .linha:nth-child(3) {
+        bottom: 0;
+        left: 0;
+        height: 10px;
+        width: 100%;
+    }
+
+    & .linha:nth-child(4) {
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        height: 450px;
+        width: 10px;
+    }
+
+    & .pessoa {
+        pointer-events: none;
+        user-select: none;
+        position: absolute;
+        bottom: 0;
+        right: -40%;
+        height: 500px;
+        object-fit: contain;
+    }
+
+    & h1 {
+        color: var(--ouro);
+        font-family: Roboto, sans-serif;
+        position: absolute;
+        top: 75px;
+        font-size: 64px;
+    }
+
+    & .historia-conteudo {
+        color: #fff;
+        position: absolute;
+        height: 100px;
+        width: 520px;
+        top: 35%;
+        left: 200px;
+        transform: translateY(-50%);
+        font-family: Roboto, sans-serif;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+
+
+        & p {
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        & strong {
+            color: var(--ouro-claro);
+            font-size: 20px;
+        }
+    }
+
+    & .Continuacao-Historia {
+        color: #fff;
+        position: absolute;
+        height: 100px;
+        width: 520px;
+        top: 35%;
+        right: 200px;
+        transform: translateY(-50%);
+        font-family: Roboto, sans-serif;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+
+        & p {
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        & strong {
+            color: var(--ouro-claro);
+            font-size: 20px;
+        }
+    }
+}

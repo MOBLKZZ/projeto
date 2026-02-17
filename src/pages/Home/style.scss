@@ -1,0 +1,236 @@
+:root {
+    //--principal--//
+    --ouro: #E1BD73;
+    --ouro-claro: #e2cc83;
+    --fonte-cor-1: #fff;
+    --fonte-cor-2: #121215;
+
+    //--scroll--//
+    --cor-scroll-1: #ccc;
+    --cor-scroll-2: #121215;
+}
+
+@keyframes girar {
+    from {
+        transform: rotateZ(45deg);
+    }
+
+    to {
+        transform: rotateZ(405deg);
+    }
+}
+
+@keyframes balancar {
+    from {
+        transform: rotateZ(10deg);
+    }
+
+    to {
+        transform: rotateZ(-20deg);
+    }
+}
+
+body {
+    flex-direction: column;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--cor-scroll-1) var(--cor-scroll-2);
+    scrollbar-width: thin;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: .3);
+    background-color: transparent;
+    width: 100%;
+    height: 75px;
+    font-weight: 600;
+    user-select: none;
+
+    & ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-right: 25px;
+        list-style: none;
+
+        & .banner {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            width: 250px;
+            height: 50px;
+            overflow: hidden;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & a {
+            position: relative;
+            transition: color .5s;
+            color: var(--fonte-cor-1);
+            font-size: 16px;
+            font-family: Roboto, sans-serif;
+            text-decoration: none;
+
+            &:hover {
+                color: var(--ouro-claro);
+            }
+
+            &:hover::before {
+                transform: scale(1);
+                background-color: var(--ouro-claro);
+            }
+
+            &::before {
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                transform: scale(0);
+                transform-origin: center;
+                transition: transform .5s, background-color .5s;
+                background-color: #fff;
+                width: 100%;
+                height: 1px;
+                content: "";
+            }
+        }
+    }
+}
+
+.WhatsApp {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    outline: 1.5px solid #121215;
+    outline-offset: -1px;
+    border-radius: 100px;
+    background-color: #25d366;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    z-index: 1000;
+
+    font-family: Roboto, sans-serif;
+
+    & a {
+        padding: 100px;
+
+        &:hover:before {
+            top: 0;
+            transform: scale(1);
+        }
+
+        &::before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transform: scale(.5);
+            transition: top .5s, transform .5s;
+            border-radius: 50px;
+            background-color: #121215;
+            width: 100%;
+            height: 100%;
+            content: "";
+        }
+
+        & svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    background-position: center;
+    background-size: contain;
+    z-index: 0;
+    position: relative;
+}
+
+@import "inicio";
+@import "sobre";
+
+
+#cardapio {
+    background-color: #0a0a0a;
+
+    & .Container-Card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        height: 80%;
+        gap: 0;
+        padding: 10px;
+        flex-direction: row;
+    }
+}
+
+#contato {
+    background-color: #fff;
+
+    & .hamburguer {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        user-select: none;
+        pointer-events: none;
+        animation: balancar .5s alternate infinite steps(4, end);
+
+        & img:nth-child(1) {
+            position: absolute;
+            left: -50%;
+            transform: translateX(-50%);
+            object-fit: cover;
+            height: 100%;
+            filter: drop-shadow(0 0 100px rgba(#e2cc83, .5));
+        }
+
+        & img:nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            height: 40%;
+            object-fit: cover;
+        }
+
+        & img:nth-child(3) {
+            position: absolute;
+            right: 0;
+            top: 50px;
+            height: 40%;
+            object-fit: cover;
+        }
+    }
+
+    & h1 {
+        color: #fff;
+    }
+}
