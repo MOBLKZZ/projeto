@@ -4,7 +4,6 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: grayscale(1);
   cursor: pointer;
 }
 
@@ -13,6 +12,7 @@ img {
   width: 300px;
   height: 360px;
   clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+  filter: grayscale(1);
 }
 
 .Card-2 {
@@ -20,6 +20,7 @@ img {
   width: 300px;
   height: 360px;
   clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  filter: grayscale(1);
 }
 
 .Card-3 {
@@ -27,6 +28,7 @@ img {
   width: 300px;
   height: 360px;
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  filter: grayscale(1);
 }
 
 .Card-4 {
@@ -34,4 +36,5 @@ img {
   width: 300px;
   height: 360px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  filter: grayscale(1);
 }/*# sourceMappingURL=style.css.map */

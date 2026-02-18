@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --ouro: #E1BD73;
   --ouro-claro: #e2cc83;
@@ -155,14 +156,30 @@ section {
 }
 
 #inicio {
+  position: relative;
+  height: 100vh;
+  /* Ou a altura que você desejar */
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#inicio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("./images/background.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  /* Aqui está o segredo: usamos position: fixed em vez de background-attachment */
+  position: fixed;
+  z-index: -1;
+  /* Otimização de performance */
+  will-change: transform;
 }
 #inicio .Moldura {
   display: flex;
