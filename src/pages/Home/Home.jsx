@@ -31,6 +31,7 @@ function Home() {
 
             <main>
                 <section id="inicio">
+                    <div className="foto"><img className="fundo-2" src="/images/background.webp" alt="" /></div>
                     <div className="Moldura">
                         <h1>SABOR TRADICIONAL</h1>
 
@@ -45,7 +46,6 @@ function Home() {
                         <a href="#cardapio">Ver Cardapio</a>
                         <label>Ver Cardápio</label>
                     </div>
-
                 </section>
 
                 <section id="sobre">
