@@ -1,11 +1,11 @@
 :root {
-    //--principal--//
+    /*--principal--*/
     --ouro: #E1BD73;
     --ouro-claro: #e2cc83;
     --fonte-cor-1: #fff;
     --fonte-cor-2: #121215;
 
-    //--scroll--//
+    /*--scroll--*/
     --cor-scroll-1: #ccc;
     --cor-scroll-2: #121215;
 }
@@ -34,6 +34,7 @@ body {
     flex-direction: column;
     background-color: #0a0a0a;
     overflow-x: hidden;
+    user-select: none;
 }
 
 html {
@@ -51,7 +52,7 @@ nav {
     align-items: center;
     z-index: 1;
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: .3);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
     background-color: transparent;
     width: 100%;
     height: 75px;
@@ -158,79 +159,20 @@ nav {
     }
 }
 
+
 section {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100dvh;
-    background-position: center;
-    background-size: contain;
     z-index: 0;
     position: relative;
+    overflow: hidden;
 }
 
-@import "inicio";
-@import "sobre";
 
-
-#cardapio {
-    background-color: #0a0a0a;
-
-    & .Container-Card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
-        width: 90%;
-        height: 80%;
-        gap: 0;
-        padding: 10px;
-        flex-direction: row;
-    }
-}
-
-#contato {
-    background-color: #fff;
-
-    & .hamburguer {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        height: 500px;
-        transform: translate(-50%, -50%);
-        user-select: none;
-        pointer-events: none;
-        animation: balancar .5s alternate infinite steps(4, end);
-
-        & img:nth-child(1) {
-            position: absolute;
-            left: -50%;
-            transform: translateX(-50%);
-            object-fit: cover;
-            height: 100%;
-            filter: drop-shadow(0 0 100px rgba(#e2cc83, .5));
-        }
-
-        & img:nth-child(2) {
-            position: absolute;
-            left: 0;
-            top: 50px;
-            height: 40%;
-            object-fit: cover;
-        }
-
-        & img:nth-child(3) {
-            position: absolute;
-            right: 0;
-            top: 50px;
-            height: 40%;
-            object-fit: cover;
-        }
-    }
-
-    & h1 {
-        color: #fff;
-    }
-}
+@import "./inicio";
+@import "./sobre";
+@import "./cardapio";
+@import "./contato";

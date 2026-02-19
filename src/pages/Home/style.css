@@ -1,8 +1,10 @@
 :root {
+  /*--principal--*/
   --ouro: #E1BD73;
   --ouro-claro: #e2cc83;
   --fonte-cor-1: #fff;
   --fonte-cor-2: #121215;
+  /*--scroll--*/
   --cor-scroll-1: #ccc;
   --cor-scroll-2: #121215;
 }
@@ -27,6 +29,9 @@ body {
   flex-direction: column;
   background-color: #0a0a0a;
   overflow-x: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -148,39 +153,29 @@ section {
   align-items: center;
   width: 100%;
   height: 100dvh;
-  background-position: center;
-  background-size: contain;
   z-index: 0;
   position: relative;
+  overflow: hidden;
 }
 
 #inicio {
   position: relative;
   height: 100vh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 #inicio .foto {
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: -1;
-}
-#inicio .foto .fundo-2 {
-  position: fixed;
-  top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1000;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: -1;
+  top: 0;
+  background-image: url("/images/background.webp");
+  background-position: center;
+  background-size: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
 }
 #inicio .Moldura {
   display: flex;
@@ -321,78 +316,133 @@ section {
 }
 #sobre h1 {
   color: var(--ouro);
-  font-family: Roboto, sans-serif;
+  font-family: "Archivo Black";
   position: absolute;
   top: 75px;
   font-size: 64px;
 }
-#sobre .historia-conteudo {
+#sobre .container-historia {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+#sobre .container-historia .historia-conteudo {
   color: #fff;
-  position: absolute;
   height: 100px;
   width: 520px;
-  top: 35%;
-  left: 200px;
   transform: translateY(-50%);
   font-family: Roboto, sans-serif;
   font-size: 1.1em;
   margin-bottom: 20px;
 }
-#sobre .historia-conteudo p {
+#sobre .container-historia .historia-conteudo p {
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto 50px auto;
 }
-#sobre .historia-conteudo strong {
+#sobre .container-historia .historia-conteudo strong {
   color: var(--ouro-claro);
   font-size: 20px;
 }
-#sobre .Continuacao-Historia {
+#sobre .container-historia .Continuacao-Historia {
   color: #fff;
-  position: absolute;
   height: 100px;
   width: 520px;
-  top: 35%;
-  right: 200px;
   transform: translateY(-50%);
   font-family: Roboto, sans-serif;
   font-size: 1.1em;
   margin-bottom: 20px;
 }
-#sobre .Continuacao-Historia p {
+#sobre .container-historia .Continuacao-Historia p {
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto 50px auto;
 }
-#sobre .Continuacao-Historia strong {
+#sobre .container-historia .Continuacao-Historia strong {
   color: var(--ouro-claro);
   font-size: 20px;
 }
 
 #cardapio {
-  background-color: #0a0a0a;
+  background-color: #1a1a1a;
+}
+#cardapio h1 {
+  color: var(--ouro);
+  font-family: "Archivo Black";
+  position: absolute;
+  top: 100px;
+  font-size: 64px;
 }
 #cardapio .Container-Card {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 0;
-  width: 90%;
-  height: 80%;
+  bottom: 50px;
+  width: 85%;
+  height: 65%;
   gap: 0;
   padding: 10px;
   flex-direction: row;
+  background-color: #0a0a0a;
+  border: 1px solid var(--ouro);
+  border-radius: 10px;
+  box-shadow: -10px 10px 0 0 rgb(0, 0, 0), -20px 20px 0 0 rgba(0, 0, 0, 0.8), -30px 30px 0 0 rgba(0, 0, 0, 0.3);
 }
 
 #contato {
-  background-color: #fff;
+  background-color: #0a0a0a;
+}
+#contato h1 {
+  color: var(--ouro);
+  font-size: 32px;
+  font-family: "Archivo Black";
+  position: absolute;
+  top: 125px;
+  left: 125px;
+}
+#contato .container-links {
+  position: absolute;
+  border: 1px solid var(--ouro);
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 250px;
+  top: 225px;
+  left: 150px;
+  box-shadow: -10px 10px 0 0 rgb(0, 0, 0), -20px 20px 0 0 rgba(0, 0, 0, 0.8), -30px 30px 0 0 rgba(0, 0, 0, 0.3);
+}
+#contato .container-links div {
+  padding: 15px 25px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+}
+#contato .container-links div:hover {
+  background: #1e1e1e;
+}
+#contato .container-links div label {
+  pointer-events: none;
 }
 #contato .hamburguer {
   position: absolute;
   top: 25%;
-  left: 50%;
+  left: 55%;
   height: 500px;
+  width: 500px;
   transform: translate(-50%, -50%);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -400,31 +450,28 @@ section {
   pointer-events: none;
   animation: balancar 0.5s alternate infinite steps(4, end);
 }
-#contato .hamburguer img:nth-child(1) {
+#contato .hamburguer .burguer {
   position: absolute;
-  left: -50%;
-  transform: translateX(-50%);
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   filter: drop-shadow(0 0 100px rgba(226, 204, 131, 0.5));
 }
-#contato .hamburguer img:nth-child(2) {
+#contato .hamburguer .olho-esquerdo {
   position: absolute;
-  left: 0;
+  left: 25px;
   top: 50px;
-  height: 40%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 45%;
+  width: 45%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-#contato .hamburguer img:nth-child(3) {
+#contato .hamburguer .olho-direito {
   position: absolute;
-  right: 0;
+  right: 25px;
   top: 50px;
-  height: 40%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#contato h1 {
-  color: #fff;
+  height: 45%;
+  width: 45%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */

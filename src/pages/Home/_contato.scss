@@ -1,0 +1,84 @@
+#contato {
+    background-color: #0a0a0a;
+
+    & h1 {
+        color: var(--ouro);
+        font-size: 32px;
+        font-family: 'Archivo Black';
+        position: absolute;
+        top: 125px;
+        left: 125px;
+    }
+
+    & .container-links {
+        position: absolute;
+        border: 1px solid var(--ouro);
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        width: 250px;
+        top: 225px;
+        left: 150px;
+        box-shadow: -10px 10px 0 0 rgba(0, 0, 0, 1), -20px 20px 0 0 rgba(0, 0, 0, .8), -30px 30px 0 0 rgba(0, 0, 0, .3);
+        & div {
+            padding: 15px 25px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            gap: 50px;
+            color: #fff;
+            font-family: Roboto, sans-serif;
+            cursor: pointer;
+
+            &:hover {
+                background: #1e1e1e;
+            }
+
+            & label {
+                pointer-events: none;
+            }
+        }
+    }
+
+    & .hamburguer {
+        position: absolute;
+        top: 25%;
+        left: 55%;
+        height: 500px;
+        width: 500px;
+        transform: translate(-50%, -50%);
+        user-select: none;
+        pointer-events: none;
+        animation: balancar .5s alternate infinite steps(4, end);
+
+        & .burguer {
+            position: absolute;
+            object-fit: cover;
+            height: 100%;
+            filter: drop-shadow(0 0 100px rgba(#e2cc83, .5));
+        }
+
+        & .olho-esquerdo {
+            position: absolute;
+            left: 25px;
+            top: 50px;
+            height: 45%;
+            width: 45%;
+            object-fit: contain;
+        }
+
+        & .olho-direito {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+            height: 45%;
+            width: 45%;
+            object-fit: contain;
+        }
+    }
+}

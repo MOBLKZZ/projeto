@@ -46,58 +46,62 @@
 
     & h1 {
         color: var(--ouro);
-        font-family: Roboto, sans-serif;
+        font-family: 'Archivo Black';
         position: absolute;
         top: 75px;
         font-size: 64px;
     }
 
-    & .historia-conteudo {
-        color: #fff;
-        position: absolute;
-        height: 100px;
-        width: 520px;
-        top: 35%;
-        left: 200px;
-        transform: translateY(-50%);
-        font-family: Roboto, sans-serif;
-        font-size: 1.1em;
-        margin-bottom: 20px;
+    & .container-historia {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 50px;
+        margin-bottom: 100px;
+
+        & .historia-conteudo {
+            color: #fff;
+            height: 100px;
+            width: 520px;
+            transform: translateY(-50%);
+            font-family: Roboto, sans-serif;
+            font-size: 1.1em;
+            margin-bottom: 20px;
 
 
-        & p {
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
+            & p {
+                line-height: 1.6;
+                max-width: 600px;
+                margin: 0 auto 50px auto;
+            }
+
+            & strong {
+                color: var(--ouro-claro);
+                font-size: 20px;
+            }
         }
 
-        & strong {
-            color: var(--ouro-claro);
-            font-size: 20px;
-        }
-    }
+        & .Continuacao-Historia {
+            color: #fff;
+            height: 100px;
+            width: 520px;
+            transform: translateY(-50%);
+            font-family: Roboto, sans-serif;
+            font-size: 1.1em;
+            margin-bottom: 20px;
 
-    & .Continuacao-Historia {
-        color: #fff;
-        position: absolute;
-        height: 100px;
-        width: 520px;
-        top: 35%;
-        right: 200px;
-        transform: translateY(-50%);
-        font-family: Roboto, sans-serif;
-        font-size: 1.1em;
-        margin-bottom: 20px;
+            & p {
+                line-height: 1.6;
+                max-width: 600px;
+                margin: 0 auto 50px auto;
+            }
 
-        & p {
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-        }
-
-        & strong {
-            color: var(--ouro-claro);
-            font-size: 20px;
+            & strong {
+                color: var(--ouro-claro);
+                font-size: 20px;
+            }
         }
     }
 }

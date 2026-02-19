@@ -1,26 +1,21 @@
 #inicio {
     position: relative;
     height: 100vh;
-    user-select: none;
 
     & .foto {
-        pointer-events: none;
-        user-select: none;
         position: absolute;
         height: 100%;
         width: 100%;
-        z-index: -1;
-
-        & .fundo-2 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            z-index: 1000;
-            object-fit: cover;
-            z-index: -1;
-        }
+        left: 0;
+        top: 0;
+        background-image: url("/images/background.webp");
+        background-position: center;
+        background-size: cover;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000;
+        will-change: transform;
+        image-rendering: -webkit-optimize-contrast;
     }
 
     & .Moldura {
